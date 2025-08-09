@@ -4,82 +4,560 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portafolio — Oscar Valdebenito</title>
-  <meta name="description" content="Portafolio de proyectos: Django, APIs, GitLab, AWS, SQL Server, Azure Graph." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="Portafolio de proyectos: Django, APIs, GitLab, AWS, SQL Server, Azure Graph."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
   <style>
-    :root{
+      :root {
       --bg: #0b0e14;
       --card: #111522;
       --muted: #9aa4b2;
       --text: #e6eaf2;
       --brand: #5eead4;
       --accent: #7dd3fc;
-      --ring: rgba(94,234,212,.35);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,sans-serif;background:linear-gradient(180deg,#0b0e14 0%,#0b0e14 60%,#0d1320 100%);color:var(--text);}
-    a{color:inherit;text-decoration:none}
-    img,video{max-width:100%;display:block}
-    .container{width:min(1100px,92%);margin-inline:auto}
-    header{position:sticky;top:0;background:rgba(11,14,20,.6);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid rgba(255,255,255,.06);z-index:30}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:0 0 0 6px var(--ring)}
-    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.2px}
-    .nav a, .lang-switch{font-size:14px;color:var(--muted);margin-left:18px}
-    .nav a:hover{color:#fff}
-    .lang-switch select{background:transparent;border:1px solid rgba(255,255,255,.15);color:#fff;padding:6px 8px;border-radius:8px}
+        --ring: rgba(94, 234, 212, 0.35);
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          Cantarell, Noto Sans, "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(
+          180deg,
+          #0b0e14 0%,
+          #0b0e14 60%,
+          #0d1320 100%
+        );
+        color: var(--text);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img,
+      video {
+        max-width: 100%;
+        display: block;
+      }
+      .container {
+        width: min(1100px, 92%);
+        margin-inline: auto;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(11, 14, 20, 0.6);
+        backdrop-filter: saturate(180%) blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        z-index: 30;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .brand .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--brand), var(--accent));
+        box-shadow: 0 0 0 6px var(--ring);
+      }
+      .brand h1 {
+        font-size: 18px;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .nav a {
+        font-size: 14px;
+        color: var(--muted);
+        margin-left: 18px;
+      }
+      .nav a:hover {
+        color: #fff;
+      }
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .lang-switch {
+        position: relative;
+      }
+      .lang-switch select {
+        appearance: none;
+        background: #0b1020;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #fff;
+        padding: 6px 28px 6px 10px;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+      .lang-switch:after {
+        content: "▾";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9aa4b2;
+        font-size: 12px;
+        pointer-events: none;
+      }
+      .icon-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #0b1020;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+      }
+      .icon-btn:hover {
+        border-color: rgba(255, 255, 255, 0.25);
+      }
 
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:48px 0 24px}
-    .hero h2{font-size:36px;line-height:1.15;margin:0}
-    .hero p{color:var(--muted);font-size:16px;margin:14px 0 22px}
-    .badges{display:flex;flex-wrap:wrap;gap:10px}
-    .badge{font-size:12px;padding:6px 10px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.04)}
-    .cta{display:flex;gap:12px;margin-top:12px}
-    .btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(135deg,rgba(94,234,212,.08),rgba(125,211,252,.08));color:#fff;font-weight:600;box-shadow:var(--shadow)}
-    .btn.ghost{background:none}
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 28px;
+        align-items: center;
+        padding: 48px 0 24px;
+      }
+      .hero h2 {
+        font-size: 36px;
+        line-height: 1.15;
+        margin: 0;
+      }
+      .hero p {
+        color: var(--muted);
+        font-size: 16px;
+        margin: 14px 0 22px;
+        text-align: justify;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .badge {
+        font-size: 12px;
+        padding: 6px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .btn {
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: linear-gradient(
+          135deg,
+          rgba(94, 234, 212, 0.08),
+          rgba(125, 211, 252, 0.08)
+        );
+        color: #fff;
+        font-weight: 600;
+        box-shadow: var(--shadow);
+      }
+      .btn.ghost {
+        background: none;
+      }
 
-    .card{background:linear-gradient(180deg,var(--card),#0f1525);border:1px solid rgba(255,255,255,.06);border-radius:16px;box-shadow:var(--shadow)}
-    .section{padding:26px 0}
-    .section h3{font-size:20px;margin:0 0 16px}
-    .about{padding:24px}
-    .about p{color:var(--muted);margin:0}
+      .card {
+        background: linear-gradient(180deg, var(--card), #0f1525);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+      }
+      .section {
+        padding: 26px 0;
+      }
+      .section h3 {
+        font-size: 20px;
+        margin: 0 0 16px;
+      }
+      .about {
+        padding: 24px;
+      }
+      .about p {
+        color: var(--muted);
+        margin: 0;
+        text-align: justify;
+      }
 
-    .filters{display:flex;flex-wrap:wrap;gap:10px;padding:16px}
-    .filters button{background:#0b1020;color:#c7d2fe;border:1px solid rgba(125,211,252,.25);padding:8px 12px;border-radius:999px;font-size:12px;cursor:pointer}
-    .filters button.active{outline:2px solid var(--accent)}
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 16px;
+      }
+      .filters button {
+        background: #0b1020;
+        color: #c7d2fe;
+        border: 1px solid rgba(125, 211, 252, 0.25);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .filters button.active {
+        outline: 2px solid var(--accent);
+      }
 
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:0 0 12px}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){.grid{grid-template-columns:1fr}.hero h2{font-size:28px}}
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        padding: 0 12px 12px;
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .hero h2 {
+          font-size: 28px;
+        }
+      }
 
-    .project{overflow:hidden;display:flex;flex-direction:column}
-    .project .cover{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06);position:relative}
-    .project .cover img, .project .cover video{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-    .project:hover .cover img, .project:hover .cover video{transform:scale(1.04)}
-    .project .cover .play{position:absolute;inset:auto auto 10px 10px;background:rgba(0,0,0,.6);padding:6px 8px;border-radius:8px;font-size:12px}
-    .project .body{padding:14px 14px 16px}
-    .project .title{font-size:16px;margin:0 0 6px}
-    .project .desc{font-size:14px;color:var(--muted);margin:0 0 12px;min-height:42px}
-    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-    .tag{font-size:11px;border:1px solid rgba(255,255,255,.08);padding:3px 8px;border-radius:999px;color:#b9e6ff}
-    .links{display:flex;gap:10px}
-    .link{font-size:12px;padding:7px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.08)}
+      .project {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .project .cover {
+        aspect-ratio: 16/10;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        position: relative;
+      }
+      .project .cover img,
+      .project .cover video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .project:hover .cover img,
+      .project:hover .cover video {
+        transform: scale(1.04);
+      }
+      .project .cover .play {
+        position: absolute;
+        inset: auto auto 10px 10px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 6px 8px;
+        border-radius: 8px;
+        font-size: 12px;
+        color: #fff;
+      }
+      .project .body {
+        padding: 14px 14px 16px;
+      }
+      .project .title {
+        font-size: 16px;
+        margin: 0 0 6px;
+      }
+      .project .desc {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 0 0 12px;
+        min-height: 42px;
+        text-align: justify;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 10px;
+      }
+      .tag {
+        font-size: 11px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 3px 8px;
+        border-radius: 999px;
+        color: #b9e6ff;
+      }
+      .links {
+        display: flex;
+        gap: 10px;
+      }
+      .link {
+        font-size: 12px;
+        padding: 7px 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .more-link{
+        background:none;
+        border:none;
+        color: var(--accent);
+        font-size: 12px;
+        cursor: pointer;
+        padding: 0;
+      }
 
-    footer{padding:36px 0 60px;color:var(--muted);font-size:14px;text-align:center}
-    .foot-links{display:flex;justify-content:center;gap:14px;margin-top:8px}
+      footer {
+        padding: 36px 0 60px;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+      }
+      .foot-links {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 8px;
+      }
 
     /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
-    .lightbox.open{display:flex}
-    .lightbox img, .lightbox video{max-width:96vw;max-height:86vh;border-radius:10px}
-    .lightbox .close{position:absolute;top:18px;right:18px;background:#0b1020;border:1px solid rgba(255,255,255,.15);color:#fff;border-radius:8px;padding:8px 10px;cursor:pointer}
-    .lightbox .caption{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.5);padding:8px 12px;border-radius:8px;color:#fff;font-size:12px}
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 50;
+      }
+      .lightbox.open {
+        display: flex;
+      }
+      .lightbox .close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: #0b1020;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border-radius: 8px;
+        padding: 8px 10px;
+        cursor: pointer;
+      }
+      .lightbox .lb-content {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "media side"
+          "thumbs side";
+        gap: 18px;
+        align-items: start;
+        width: min(1100px, 96vw);
+      }
+      .lightbox .lb-media {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 16px;
+        background: linear-gradient(180deg, var(--card), #0f1525);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        grid-area: media;
+      }
+      .lightbox .lb-media img,
+      .lightbox .lb-media video {
+        max-width: 100%;
+        max-height: 76vh;
+        border-radius: 12px;
+      }
+      .lightbox .lb-side {
+        background: linear-gradient(180deg, var(--card), #0f1525);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 16px;
+        color: var(--text);
+        max-height: 76vh;
+        overflow: auto;
+        grid-area: side;
+        align-self: start;
+      }
+      .lightbox .lb-side h4 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+      .lightbox .lb-side p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+        white-space: pre-wrap;
+        text-align: justify;
+      }
+      .lightbox .lb-thumbs{
+        margin-top:10px;display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;grid-area: thumbs;
+      }
+      .lightbox .lb-thumb{flex:0 0 auto;width:80px;height:52px;border:1px solid rgba(255,255,255,.15);border-radius:8px;overflow:hidden;cursor:pointer;position:relative;background:#0b1020}
+      .lightbox .lb-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+      .lightbox .lb-thumb video{width:100%;height:100%;object-fit:cover;display:block}
+      .lightbox .lb-thumb .vid-flag{position:absolute;inset:auto 6px 6px auto;background:rgba(0,0,0,.55);color:#fff;font-size:11px;border-radius:6px;padding:2px 6px}
+      .lightbox .lb-thumb.active{outline:2px solid var(--accent)}
+      .lightbox .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .lightbox .nav-btn:hover {
+        background: rgba(0, 0, 0, 0.7);
+      }
+      .lightbox .prev {
+        left: 18px;
+      }
+      .lightbox .next {
+        right: 18px;
+      }
+      @media (max-width: 900px) {
+        .lightbox .lb-content {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
+          grid-template-areas:
+            "media"
+            "thumbs"
+            "side";
+          gap: 12px;
+          align-items: start;
+        }
+        .lightbox .lb-media{
+          padding: 10px;
+        }
+      }
 
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      /* Offset para anclas debajo de header sticky */
+      section[id],
+      h3[id] {
+        scroll-margin-top: 80px;
+      }
+
+      /* Contacto: mayor separación de links respecto al título */
+      .contact-links {
+        margin-top: 20px;
+      }
+
+      /* Tema claro */
+      .theme-light {
+        --text: #0b0e14;
+        --muted: #334155;
+      }
+      .theme-light body {
+        background: linear-gradient(
+          180deg,
+          #f5f7fb 0%,
+          #f5f7fb 60%,
+          #eef2f9 100%
+        );
+        color: #0b0e14;
+      }
+      .theme-light .card {
+        background: linear-gradient(180deg, #ffffff, #f4f7fb);
+        border-color: rgba(0, 0, 0, 0.06);
+      }
+      .theme-light .filters button {
+        background: #eef2f9;
+        color: #1f2937;
+        border-color: rgba(0, 0, 0, 0.12);
+      }
+      .theme-light header {
+        background: rgba(255, 255, 255, 0.7);
+        border-bottom-color: rgba(0, 0, 0, 0.06);
+      }
+      .theme-light .nav a:hover { color:#0b0e14 }
+      .theme-light .lang-switch select,
+      .theme-light .icon-btn {
+        background: #eef2f9;
+        color: #0b0e14;
+        border-color: rgba(0, 0, 0, 0.12);
+      }
+      .theme-light .tag {
+        color: #0369a1;
+      }
+      .theme-light .btn{
+        color:#0b0e14;
+        border-color: rgba(0,0,0,.12);
+        background: linear-gradient(135deg, rgba(94,234,212,.15), rgba(125,211,252,.15));
+      }
+      .theme-light .btn.ghost{
+        background:none;
+        color:#0b0e14;
+        border-color: rgba(0,0,0,.15);
+      }
+      .theme-light .badge{
+        background: rgba(0,0,0,.04);
+        border-color: rgba(0,0,0,.08);
+      }
+      .theme-light .link{
+        border-color: rgba(0,0,0,.12);
+      }
+      .theme-light .lightbox .lb-side{
+        background: linear-gradient(180deg, #ffffff, #f4f7fb);
+        border-color: rgba(0,0,0,.12);
+        color:#0b0e14;
+      }
+      .theme-light .lightbox .lb-media{
+        background: linear-gradient(180deg, #ffffff, #f4f7fb);
+        border-color: rgba(0,0,0,.12);
+      }
+      .theme-light .lightbox .lb-thumb{background:#e5ecf8;border-color:rgba(0,0,0,.12)}
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
   </style>
 </head>
 <body>
@@ -87,19 +565,29 @@
     <div class="container nav">
       <div class="brand" aria-label="Identidad">
         <span class="dot" aria-hidden="true"></span>
-        <h1>Oscar Valdebenito</h1>
+        <h1>Oscar Valdebenito Zúñiga</h1>
       </div>
       <nav aria-label="Navegación principal">
         <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
         <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
         <a href="#contacto" data-i18n="nav.contact">Contacto</a>
       </nav>
+        <div class="controls">
       <div class="lang-switch" aria-label="Selector de idioma">
         <label class="sr-only" for="lang">Idioma</label>
         <select id="lang">
           <option value="es">ES</option>
           <option value="en">EN</option>
         </select>
+          </div>
+          <button
+            id="themeToggle"
+            class="icon-btn"
+            aria-label="Cambiar tema"
+            title="Cambiar tema"
+          >
+            🌙
+          </button>
       </div>
     </div>
   </header>
@@ -107,8 +595,28 @@
   <main class="container">
     <section class="hero">
       <div>
-        <h2 data-i18n="hero.title">Desarrollo soluciones con <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">Django</span>, APIs y datos en la nube</h2>
-        <p data-i18n="hero.subtitle">Analista Programador e Ingeniero en Informática (INACAP). Experto en modernización de sistemas en el sector público (IPS), integraciones con Azure Graph, despliegues en AWS, automatizaciones con GitLab CI/CD y bases de datos SQL Server.</p>
+          <h2 data-i18n="hero.title">
+            Desarrollo soluciones con
+            <span
+              style="
+                background: linear-gradient(
+                  135deg,
+                  var(--brand),
+                  var(--accent)
+                );
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+              "
+              >Django</span
+            >, APIs y datos en la nube
+          </h2>
+          <p data-i18n="hero.subtitle">
+            Analista Programador e Ingeniero en Informática (INACAP). Experto en
+            modernización de sistemas en el sector público, desarrollo de
+            aplicaciones web en Django, despliegues en AWS, automatizaciones con
+            GitLab CI/CD y bases de datos SQL Server.
+          </p>
         <div class="badges" aria-label="Tecnologías principales">
           <span class="badge">Django</span>
           <span class="badge">APIs REST</span>
@@ -118,24 +626,31 @@
           <span class="badge">SQL Server</span>
         </div>
         <div class="cta">
-          <a class="btn" href="#proyectos" data-i18n="hero.cta_projects">Ver proyectos</a>
-          <a class="btn ghost" href="#contacto" data-i18n="hero.cta_contact">Hablemos</a>
+            <a class="btn" href="#proyectos" data-i18n="hero.cta_projects"
+              >Ver proyectos</a
+            >
+            <a class="btn ghost" href="#contacto" data-i18n="hero.cta_contact"
+              >Contáctame</a
+            >
         </div>
       </div>
       <div class="card about">
         <h3 id="sobre-mi" data-i18n="about.title">Sobre mí</h3>
-        <p data-i18n="about.text">Me especializo en construir aplicaciones web robustas y mantenibles con Django: autenticación, reportes, integraciones con SAP/Oracle, y gestión documental. Me enfoco en seguridad, rendimiento y buenas prácticas de despliegue.</p>
+          <p data-i18n="about.text">
+            Me especializo en construir aplicaciones web robustas y mantenibles
+            con Django: autenticación, reportes, integraciones con SAP/Oracle, y
+            gestión documental. Me enfoco en seguridad, rendimiento y buenas
+            prácticas de despliegue.
+          </p>
       </div>
     </section>
 
     <section id="proyectos" class="section">
       <div class="card">
         <div class="filters" aria-label="Filtros de proyectos">
-          <button data-filter="all" class="active" data-i18n="filters.all">Todos</button>
-          <button data-filter="Django">Django</button>
-          <button data-filter="API">API</button>
-          <button data-filter="AWS">AWS</button>
-          <button data-filter="SQL">SQL</button>
+            <button data-filter="all" class="active" data-i18n="filters.all">
+              Todos
+            </button>
         </div>
         <div class="grid" id="grid"></div>
       </div>
@@ -144,13 +659,31 @@
     <section id="contacto" class="section">
       <div class="card about">
         <h3 data-i18n="contact.title">Contacto</h3>
-        <p data-i18n="contact.subtitle">¿Te interesa colaborar o necesitas una solución con Django, APIs o datos? Escríbeme:</p>
-        <p>
-          <a class="link" id="emailLink" href="mailto:oscar.valdebenito@ejemplo.com">oscar.valdebenito@ejemplo.com</a>
-          ·
-          <a class="link" id="linkedinLink" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-          ·
-          <a class="link" id="githubLink" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <p class="contact-links">
+            <a
+              class="link"
+              id="emailLink"
+              href="mailto:oscar.valdebenito@ejemplo.com"
+              >oscar.valdebenito@ejemplo.com</a
+            >
+            ·
+            <a
+              class="link"
+              id="linkedinLink"
+              href="https://www.linkedin.com/in/oscar-valdebenito-zuñiga-870406171"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            ·
+            <a
+              class="link"
+              id="githubLink"
+              href="https://github.com/odvz100"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
         </p>
       </div>
     </section>
@@ -158,254 +691,463 @@
 
   <footer>
     <div class="container">
-      <div>© <span id="year"></span> Oscar Valdebenito — Django • APIs • AWS • SQL</div>
-      <div class="foot-links">
-        <a href="#" data-i18n="footer.privacy">Aviso de privacidad</a>
-        <a href="#" data-i18n="footer.credits">Créditos</a>
+        <div>
+          © <span id="year"></span> Oscar Valdebenito — Django • APIs • AWS •
+          SQL
       </div>
     </div>
   </footer>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Visor de media">
-    <button class="close" aria-label="Cerrar visor" id="lightboxClose" data-i18n="lightbox.close">Cerrar ✕</button>
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-modal="true"
+      role="dialog"
+      aria-label="Visor de media"
+    >
+      <button
+        class="close"
+        aria-label="Cerrar visor"
+        id="lightboxClose"
+        data-i18n="lightbox.close"
+      >
+        Cerrar ✕
+      </button>
+      <div class="lb-content">
+        <div class="lb-media">
     <img id="lightboxImg" alt="Vista ampliada del proyecto" />
-    <video id="lightboxVideo" controls playsinline style="display:none"></video>
-    <div class="caption" id="lightboxCaption"></div>
+          <video
+            id="lightboxVideo"
+            controls
+            playsinline
+            style="display: none"
+          ></video>
+        </div>
+        <div class="lb-thumbs" id="lightboxThumbs"></div>
+        <button class="nav-btn prev" id="lbPrev" aria-label="Anterior">
+          ‹
+        </button>
+        <button class="nav-btn next" id="lbNext" aria-label="Siguiente">
+          ›
+        </button>
+        <aside class="lb-side">
+          <h4 id="lightboxTitle"></h4>
+          <p id="lightboxDesc"></p>
+        </aside>
+      </div>
   </div>
 
   <script>
     // ===== i18n simple (ES/EN) =====
     const I18N = {
       es: {
-        nav: { projects: 'Proyectos', about: 'Sobre mí', contact: 'Contacto' },
+          nav: {
+            projects: "Proyectos",
+            about: "Sobre mí",
+            contact: "Contacto",
+          },
         hero: {
-          title: 'Desarrollo soluciones con <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">Django</span>, APIs y datos en la nube',
-          subtitle: 'Analista Programador e Ingeniero en Informática (INACAP). Experto en modernización de sistemas en el sector público (IPS), integraciones con Azure Graph, despliegues en AWS, automatizaciones con GitLab CI/CD y bases de datos SQL Server.',
-          cta_projects: 'Ver proyectos',
-          cta_contact: 'Hablemos'
+            title:
+              'Desarrollo soluciones con <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">Django</span>, APIs y datos en la nube',
+            subtitle:
+              "Analista Programador e Ingeniero en Informática (INACAP). Experto en modernización de sistemas en el sector público, desarrollo de aplicaciones web en Django, despliegues en AWS, Kubernetes, automatizaciones con GitLab CI/CD y bases de datos SQL Server.",
+            cta_projects: "Ver proyectos",
+            cta_contact: "Contáctame",
         },
         about: {
-          title: 'Sobre mí',
-          text: 'Me especializo en construir aplicaciones web robustas y mantenibles con Django: autenticación, reportes, integraciones con SAP/Oracle, y gestión documental. Me enfoco en seguridad, rendimiento y buenas prácticas de despliegue.'
+            title: "Sobre mí",
+            text: "Me especializo en construir aplicaciones web robustas y mantenibles con Django, abarcando desde la autenticación segura y generación de reportes hasta integraciones con sistemas SAP, Oracle y Microsoft Azure Graph. Tengo amplia experiencia en la implementación de APIs REST, gestión documental, optimización de rendimiento y despliegue en entornos productivos sobre Kubernetes, así como en el uso de SQL Server y MySQL para la gestión de datos.\n\nTambién cuento con experiencia en la administración de repositorios y automatización de procesos mediante GitLab CI/CD, manejo de Power BI para visualización de datos, y aplicación de metodologías ágiles en proyectos de modernización tecnológica. Me enfoco en la seguridad, escalabilidad y buenas prácticas de desarrollo para garantizar soluciones eficientes y sostenibles.",
         },
-        filters: { all: 'Todos' },
+          filters: { all: "Todos" },
         contact: {
-          title: 'Contacto',
-          subtitle: '¿Te interesa colaborar o necesitas una solución con Django, APIs o datos? Escríbeme:'
+            title: "Contacto",
+            subtitle:
+              "¿Te interesa colaborar o necesitas una solución con Django, APIs o datos? Escríbeme:",
         },
-        footer: { privacy: 'Aviso de privacidad', credits: 'Créditos' },
-        lightbox: { close: 'Cerrar ✕', play: 'Reproducir' }
+          footer: { privacy: "Aviso de privacidad", credits: "Créditos" },
+          lightbox: { close: "Cerrar ✕", play: "Reproducir" },
       },
       en: {
-        nav: { projects: 'Projects', about: 'About', contact: 'Contact' },
+          nav: { projects: "Projects", about: "About", contact: "Contact" },
         hero: {
-          title: 'I build solutions with <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">Django</span>, APIs and cloud data',
-          subtitle: 'Software Engineer from INACAP. Experience modernizing public-sector systems (IPS), Azure Graph integrations, AWS deployments, GitLab CI/CD automation, and SQL Server databases.',
-          cta_projects: 'View projects',
-          cta_contact: 'Let’s talk'
+            title:
+              'I build solutions with <span style="background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">Django</span>, APIs and cloud data',
+            subtitle:
+              "Software Engineer from INACAP. Experience modernizing public-sector systems (IPS), Azure Graph integrations, AWS deployments, Kubernetes, GitLab CI/CD automation, and SQL Server databases.",
+            cta_projects: "View projects",
+            cta_contact: "Let’s talk",
         },
         about: {
-          title: 'About me',
-          text: 'I specialize in building robust, maintainable Django apps: authentication, reporting, SAP/Oracle integrations and document management, with a strong focus on security and performance.'
+            title: "About me",
+            text: "I specialize in building robust and maintainable web applications with Django, covering secure authentication, report generation, and integrations with SAP, Oracle, and Microsoft Azure Graph. I have extensive experience implementing REST APIs, document management systems, performance optimization, and deploying production environments on AWS, as well as using SQL Server and MySQL for data management.\n\nI am also skilled in repository management and process automation using GitLab CI/CD, leveraging Power BI for data visualization, and applying agile methodologies in technological modernization projects. My focus is on security, scalability, and development best practices to deliver efficient and sustainable solutions.",
         },
-        filters: { all: 'All' },
+          filters: { all: "All" },
         contact: {
-          title: 'Contact',
-          subtitle: 'Interested in collaborating or need a Django/API/data solution? Get in touch:'
+            title: "Contact",
+            subtitle:
+              "Interested in collaborating or need a Django/API/data solution? Get in touch:",
+          },
+          footer: { privacy: "Privacy notice", credits: "Credits" },
+          lightbox: { close: "Close ✕", play: "Play" },
         },
-        footer: { privacy: 'Privacy notice', credits: 'Credits' },
-        lightbox: { close: 'Close ✕', play: 'Play' }
+      };
+
+      function setLang(lang) {
+        const dict = I18N[lang] || I18N.es;
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
+          const path = el.getAttribute("data-i18n").split(".");
+          let val = dict;
+          path.forEach((p) => (val = val?.[p]));
+          if (typeof val === "string") el.innerHTML = val;
+        });
+        localStorage.setItem("lang", lang);
       }
-    };
 
-    function setLang(lang){
-      const dict = I18N[lang] || I18N.es;
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const path = el.getAttribute('data-i18n').split('.');
-        let val = dict; path.forEach(p=> val = val?.[p]);
-        if(typeof val === 'string') el.innerHTML = val;
+      const select = document.getElementById("lang");
+      const detected =
+        localStorage.getItem("lang") ||
+        (navigator.language || "es").slice(0, 2);
+      select.value = ["es", "en"].includes(detected) ? detected : "es";
+      setLang(select.value);
+      select.addEventListener("change", () => {
+        setLang(select.value);
+        // Re-renderizar proyectos después de que todo esté definido
+        setTimeout(() => {
+          if (typeof renderProjects === 'function') {
+            renderProjects();
+          }
+        }, 0);
       });
-      localStorage.setItem('lang', lang);
-    }
 
-    const select = document.getElementById('lang');
-    const detected = (localStorage.getItem('lang')) || (navigator.language||'es').slice(0,2);
-    select.value = ['es','en'].includes(detected)? detected : 'es';
-    setLang(select.value);
-    select.addEventListener('change', ()=> setLang(select.value));
+      // ===== Tema claro/oscuro =====
+      const THEME_KEY = "theme";
+      const themeToggleBtn = document.getElementById("themeToggle");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-    // ===== Datos del portafolio con soporte de fotos y videos =====
-    // Cada proyecto ahora acepta un array "media" con objetos { type: 'image'|'video', src: 'ruta', poster?: 'img' }
-    // También podés traducir título y descripción con { es: '...', en: '...' }
+      function applyTheme(theme) {
+        const root = document.documentElement; // <html>
+        if (theme === "light") root.classList.add("theme-light");
+        else root.classList.remove("theme-light");
+        updateThemeToggleIcon(theme);
+      }
+      function updateThemeToggleIcon(theme) {
+        if (!themeToggleBtn) return;
+        if (theme === "light") {
+          themeToggleBtn.textContent = "🌞";
+          themeToggleBtn.setAttribute("aria-label", "Cambiar a modo oscuro");
+          themeToggleBtn.title = "Modo claro";
+        } else {
+          themeToggleBtn.textContent = "🌙";
+          themeToggleBtn.setAttribute("aria-label", "Cambiar a modo claro");
+          themeToggleBtn.title = "Modo oscuro";
+        }
+      }
+      function getInitialTheme() {
+        const saved = localStorage.getItem(THEME_KEY);
+        if (saved === "light" || saved === "dark") return saved;
+        return prefersDark.matches ? "dark" : "light";
+      }
+      let currentTheme = getInitialTheme();
+      applyTheme(currentTheme);
+      themeToggleBtn.addEventListener("click", () => {
+        currentTheme = currentTheme === "dark" ? "light" : "dark";
+        localStorage.setItem(THEME_KEY, currentTheme);
+        applyTheme(currentTheme);
+      });
+      if (!localStorage.getItem(THEME_KEY)) {
+        prefersDark.addEventListener("change", (e) => {
+          currentTheme = e.matches ? "dark" : "light";
+          applyTheme(currentTheme);
+        });
+      }
+
     window.PROYECTOS = [
       {
-        title: { es: 'Gestor Documental Público (demo)', en: 'Public Document Manager (demo)' },
+          title: {
+            es: "Repositorio Documental",
+            en: "Public Document Manager",
+          },
         desc: {
-          es: 'Aplicación Django para gestión de repositorio documental, permisos, versionado y carga masiva.',
-          en: 'Django app for document repository management, permissions, versioning and bulk uploads.'
+            es: "Aplicación Django implementada en el Instituto de Previsión Social (IPS) que almacena archivos PDF e imágenes.\n\nDetalles Generales:\nEl usuario completa un formulario de carga y el sistema almacena el archivo en un bucket de AWS S3. Permite subir, visualizar, eliminar y descargar archivos, con acceso controlado según el perfil del usuario. Actualmente cuenta con una API REST (método POST) que permite a otros sistemas subir archivos mediante integración.\n\nDetalles Técnicos:\nLa aplicación está desarrollada en Django para la lógica de negocio, utiliza AWS S3 para el almacenamiento de archivos y SQL Server para la base de datos. La autenticación puede realizarse mediante Django Auth o Azure AD.",
+
+            en: "Django application implemented at the Instituto de Previsión Social (IPS) for storing PDF files and images.\n\nGeneral Details:\nUsers fill out an upload form, and the system stores the file in an AWS S3 bucket. It allows uploading, viewing, deleting, and downloading files, with access controlled based on user roles. It currently includes a REST API (POST method) that allows other systems to upload files via integration.\n\nTechnical Details:\nThe application is built in Django for business logic, uses AWS S3 for file storage, and SQL Server as the database. Authentication can be handled through Django Auth or Azure AD.",
         },
         media: [
-          { type: 'image', src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop' }
-        ],
-        tags: ['Django','AWS','SQL'],
-        links: { demo: '#', repo: '#' }
-      },
-      {
-        title: { es: 'Reloj Virtual de Asistencia (demo)', en: 'Virtual Attendance Clock (demo)' },
+            {
+              type: "video",
+              src: "assets/video_repositorio_documental_1.mp4",
+            },
+            {
+              type: "image",
+              src: "assets/repositorio_1.png",
+            },
+            {
+              type: "image",
+              src: "assets/repositorio_2.png",
+            },
+            {
+              type: "image",
+              src: "assets/repositorio_3.png",
+            },
+            {
+              type: "image",
+              src: "assets/repositorio_4.png",
+            },
+          ],
+          tags: ["Django", "AWS", "SQL"],
+          links: { demo: "#", repo: "#" },
+        },
+        {
+          title: {
+            es: "Reloj Virtual de Asistencia",
+            en: "Virtual Attendance Clock",
+          },
         desc: {
-          es: 'Marcaje, geolocalización por edificio, reportes y exportación; integración con SQL Server.',
-          en: 'Clock-in/out, building geofencing, reporting and exports; SQL Server integration.'
+            es: "Sistema Django implementado en el Instituto de Previsión Social (IPS) para el control de asistencia.\n\nDetalles Generales:\nPermite marcaje de entrada y salida con geolocalización por edificio, generación de reportes y exportación de datos, integrado con SQL Server. Cumple con las normativas de la Dirección del Trabajo (DT) y el Estatuto Administrativo.\n\nAdmite la aplicación de restricciones de marcaje por día, por edificios específicos, fechas determinadas e incluso por domicilio del usuario. Incluye gestión centralizada de usuarios y permisos.\n\nLas marcas se integran automáticamente con el sistema de asistencia del cliente y se envían comprobantes vía correo electrónico a los usuarios.\n\nDetalles Técnicos:\nDesarrollado en Django, integra georreferenciación por coordenadas, genera reportes dinámicos y permite exportación en múltiples formatos. La comunicación con el sistema de asistencia se realiza mediante API segura.",
+            en: "Django system implemented at the Instituto de Previsión Social (IPS) for attendance control.\n\nGeneral Details:\nEnables clock-in/out with building-based geolocation, report generation, and data export, integrated with SQL Server. Complies with Chilean Labor Directorate (DT) regulations and the Administrative Statute.\n\nSupports applying clock-in restrictions by day, specific buildings, certain dates, and even by the user's home address. Includes centralized user and permission management.\n\nClock-in records are automatically integrated with the client’s attendance system, and confirmation receipts are sent via email to users.\n\nTechnical Details:\nBuilt in Django, it integrates georeferencing by coordinates, generates dynamic reports, and supports export in multiple formats. Communication with the attendance system is handled through a secure API.",
         },
         media: [
-          { type: 'image', src: 'https://images.unsplash.com/photo-1551281044-8d8d0d8f1bfb?q=80&w=1200&auto=format&fit=crop' },
-          { type: 'video', src: 'assets/demo-reloj.mp4', poster: 'assets/demo-reloj-poster.jpg' }
-        ],
-        tags: ['Django','API','SQL'],
-        links: { demo: '#', repo: '#' }
-      },
-      {
-        title: { es: 'Integración Azure Graph (mock)', en: 'Azure Graph Integration (mock)' },
-        desc: {
-          es: 'Sincronización de fotos y datos institucionales; endpoints protegidos y paginación.',
-          en: 'Sync institutional photos and data; protected endpoints and pagination.'
+            {
+              type: "video",
+              src: "assets/video_reloj_virtual_1.mp4",
+            },
+          ],
+          tags: ["Django", "API", "SQL"],
+          links: { demo: "#", repo: "#" },
         },
-        media: [
-          { type: 'video', src: 'assets/demo-graph.mp4', poster: 'assets/demo-graph-poster.jpg' }
-        ],
-        tags: ['API','Django'],
-        links: { demo: '#', repo: '#' }
-      },
-      {
-        title: { es: 'Pipelines GitLab CI/CD (demo)', en: 'GitLab CI/CD Pipelines (demo)' },
-        desc: {
-          es: 'Build y despliegue de apps Django con pruebas, migraciones y collectstatic automatizados.',
-          en: 'Build & deploy Django apps with automated tests, migrations and collectstatic.'
-        },
-        media: [
-          { type: 'image', src: 'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop' }
-        ],
-        tags: ['Django','AWS'],
-        links: { demo: '#', repo: '#' }
-      }
     ];
 
     // ===== Render dinámico de proyectos =====
-    const grid = document.getElementById('grid');
-    const filters = document.querySelectorAll('.filters button');
+      const grid = document.getElementById("grid");
+      const filters = document.querySelectorAll(".filters button");
 
-    function t(obj){
+      function t(obj) {
       // helper para títulos/descripciones traducibles
-      if(obj == null) return '';
-      const lang = document.documentElement.lang || 'es';
-      return typeof obj === 'string' ? obj : (obj[lang] || obj.es || obj.en || '');
-    }
+        if (obj == null) return "";
+        const lang = document.documentElement.lang || "es";
+        return typeof obj === "string"
+          ? obj
+          : obj[lang] || obj.es || obj.en || "";
+      }
 
-    function renderProjects(active='all'){
-      grid.innerHTML = '';
-      const items = window.PROYECTOS.filter(p => active==='all' || p.tags.includes(active));
-      items.forEach(p => grid.appendChild(ProjectCard(p)));
-    }
+      function renderProjects(active = "all") {
+        grid.innerHTML = "";
+        const items = window.PROYECTOS.filter(
+          (p) => active === "all" || p.tags.includes(active)
+        );
+        items.forEach((p) => grid.appendChild(ProjectCard(p)));
+      }
 
-    function coverForMedia(media){
-      if(!media || !media.length) return null;
+      function coverForMedia(media) {
+        if (!media || !media.length) return null;
       const m = media[0];
-      if(m.type === 'video'){
-        const wrap = document.createElement('div');
-        wrap.className = 'cover';
-        const v = document.createElement('video');
-        v.muted = true; v.playsInline = true; v.autoplay = true; v.loop = true;
-        if(m.poster) v.poster = m.poster;
+        if (m.type === "video") {
+          const wrap = document.createElement("div");
+          wrap.className = "cover";
+          const v = document.createElement("video");
+          v.muted = true;
+          v.playsInline = true;
+          v.autoplay = true;
+          v.loop = true;
+          if (m.poster) v.poster = m.poster;
         v.src = m.src;
         wrap.appendChild(v);
-        const tag = document.createElement('span');
-        tag.className = 'play';
-        tag.textContent = (I18N[document.documentElement.lang]?.lightbox?.play) || 'Play';
+          const tag = document.createElement("span");
+          tag.className = "play";
+          tag.textContent =
+            I18N[document.documentElement.lang]?.lightbox?.play || "Play";
         wrap.appendChild(tag);
         return wrap;
       } else {
-        const wrap = document.createElement('div');
-        wrap.className = 'cover';
-        const img = document.createElement('img');
-        img.src = m.src; img.alt = 'cover';
+          const wrap = document.createElement("div");
+          wrap.className = "cover";
+          const img = document.createElement("img");
+          img.src = m.src;
+          img.alt = "cover";
         wrap.appendChild(img);
         return wrap;
       }
     }
 
-    function ProjectCard(p){
-      const card = document.createElement('article');
-      card.className = 'project card';
-      card.setAttribute('data-tags', p.tags.join(','));
+      function ProjectCard(p) {
+        const card = document.createElement("article");
+        card.className = "project card";
+        card.setAttribute("data-tags", p.tags.join(","));
 
       const cover = coverForMedia(p.media);
-      const body = document.createElement('div');
-      body.className = 'body';
+        const body = document.createElement("div");
+        body.className = "body";
+        const full = t(p.desc);
+        const short = (()=>{
+          // recorta por palabras para mantener traducción coherente
+          const s = t(p.desc);
+          if(s.length <= 180) return s;
+          const cut = s.slice(0, 180);
+          return cut.slice(0, cut.lastIndexOf(' ')).trim()+ '…';
+        })();
       body.innerHTML = `
           <h4 class="title">${t(p.title)}</h4>
-          <p class="desc">${t(p.desc)}</p>
-          <div class="tags">${p.tags.map(tg=>`<span class="tag">${tg}</span>`).join('')}</div>
-          <div class="links">
-            ${p?.links?.demo? `<a class="link" href="${p.links.demo}" target="_blank" rel="noopener">Demo</a>`:''}
-            ${p?.links?.repo? `<a class="link" href="${p.links.repo}" target="_blank" rel="noopener">Repo</a>`:''}
-          </div>`;
+          <p class="desc">${short}</p>
+          ${full.length>180? '<button class="more-link" data-action="more">Leer más</button>': ''}
+          <div class="tags">${p.tags
+            .map((tg) => `<span class="tag">${tg}</span>`)
+            .join("")}</div>
+          `;
+        const moreBtn = body.querySelector('[data-action="more"]');
+        if(moreBtn){
+          moreBtn.addEventListener('click', ()=> openLightbox(p, 0));
+        }
 
-      // Interacción: al clickear la portada, abrir lightbox con el primer media
-      if(cover){
-        cover.addEventListener('click', ()=> openLightbox(p.media[0], t(p.title)));
+        // Interacción: al clickear la portada, abrir lightbox con media y descripción a la derecha
+        if (cover) {
+          cover.addEventListener("click", () => openLightbox(p, 0));
         card.appendChild(cover);
       }
       card.appendChild(body);
       return card;
     }
 
-    filters.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        filters.forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
+      filters.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filters.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
         renderProjects(btn.dataset.filter);
-      })
-    })
+        });
+      });
 
     // ===== Lightbox soportando imagen y video =====
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
-    const lbVideo = document.getElementById('lightboxVideo');
-    const lbCaption = document.getElementById('lightboxCaption');
-    const lbClose = document.getElementById('lightboxClose');
+      const lb = document.getElementById("lightbox");
+      const lbImg = document.getElementById("lightboxImg");
+      const lbVideo = document.getElementById("lightboxVideo");
+      const lbTitle = document.getElementById("lightboxTitle");
+      const lbDesc = document.getElementById("lightboxDesc");
+      const lbClose = document.getElementById("lightboxClose");
+      const lbThumbs = document.getElementById("lightboxThumbs");
 
-    function openLightbox(media, caption){
-      lbCaption.textContent = caption || '';
-      if(media.type === 'video'){
-        lbImg.style.display = 'none';
-        lbVideo.style.display = 'block';
-        if(media.poster) lbVideo.poster = media.poster; else lbVideo.removeAttribute('poster');
+      let currentProject = null;
+      let currentIndex = 0;
+
+      function showMedia(media) {
+        if (!media) {
+          lbImg.style.display = "none";
+          lbVideo.style.display = "none";
+          return;
+        }
+        if (media.type === "video") {
+          lbImg.style.display = "none";
+          lbVideo.style.display = "block";
+          if (media.poster) lbVideo.poster = media.poster;
+          else lbVideo.removeAttribute("poster");
         lbVideo.src = media.src;
         lbVideo.currentTime = 0;
-        lb.classList.add('open');
-        lbVideo.play().catch(()=>{});
+          lbVideo.play().catch(() => {});
       } else {
         lbVideo.pause();
-        lbVideo.removeAttribute('src');
-        lbVideo.style.display = 'none';
-        lbImg.style.display = 'block';
+          lbVideo.removeAttribute("src");
+          lbVideo.style.display = "none";
+          lbImg.style.display = "block";
         lbImg.src = media.src;
-        lb.classList.add('open');
+        }
       }
-    }
-    function closeLightbox(){
-      lb.classList.remove('open');
-      lbImg.src='';
+
+      function openLightbox(project, startIndex = 0) {
+        currentProject = project;
+        currentIndex = Math.max(
+          0,
+          Math.min(startIndex, (project?.media?.length || 1) - 1)
+        );
+        lbTitle.textContent = t(project.title) || "";
+        lbDesc.textContent = t(project.desc) || "";
+        lb.classList.add("open");
+        showMedia(project?.media?.[currentIndex]);
+        renderThumbs();
+      }
+
+      function nav(delta) {
+        if (
+          !currentProject ||
+          !currentProject.media ||
+          currentProject.media.length === 0
+        )
+          return;
+        const total = currentProject.media.length;
+        currentIndex = (currentIndex + delta + total) % total;
+        showMedia(currentProject.media[currentIndex]);
+        highlightActiveThumb();
+      }
+
+      function renderThumbs(){
+        if(!lbThumbs) return;
+        lbThumbs.innerHTML = '';
+        const mediaList = currentProject?.media || [];
+        mediaList.forEach((m, idx)=>{
+          const t = document.createElement('div');
+          t.className = 'lb-thumb';
+          if(m.type==='video'){
+            if(m.poster){
+              const im = document.createElement('img');
+              im.src = m.poster;
+              t.appendChild(im);
+            } else {
+              const vid = document.createElement('video');
+              vid.src = m.src;
+              vid.muted = true; vid.playsInline = true; vid.autoplay = true; vid.loop = true;
+              t.appendChild(vid);
+            }
+            const flag = document.createElement('span');
+            flag.className = 'vid-flag';
+            flag.textContent = 'VIDEO';
+            t.appendChild(flag);
+          } else {
+            const im = document.createElement('img');
+            im.src = m.src;
+            t.appendChild(im);
+          }
+          t.addEventListener('click', (e)=>{ e.stopPropagation(); currentIndex = idx; showMedia(m); highlightActiveThumb(); });
+          lbThumbs.appendChild(t);
+        });
+        highlightActiveThumb();
+      }
+
+      function highlightActiveThumb(){
+        if(!lbThumbs) return;
+        [...lbThumbs.children].forEach((el, i)=>{
+          el.classList.toggle('active', i===currentIndex);
+        });
+      }
+      function closeLightbox() {
+        lb.classList.remove("open");
+        lbImg.src = "";
       lbVideo.pause();
-      lbVideo.removeAttribute('src');
-    }
-    lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
-    lbClose.addEventListener('click', closeLightbox);
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
+        lbVideo.removeAttribute("src");
+        lbTitle.textContent = "";
+        lbDesc.textContent = "";
+      }
+      lb.addEventListener("click", (e) => {
+        if (e.target === lb) closeLightbox();
+      });
+      lbClose.addEventListener("click", closeLightbox);
+      const lbPrev = document.getElementById("lbPrev");
+      const lbNext = document.getElementById("lbNext");
+      lbPrev?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nav(-1);
+      });
+      lbNext?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nav(1);
+      });
+      document.addEventListener("keydown", (e) => {
+        if (!lb.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") nav(-1);
+        if (e.key === "ArrowRight") nav(1);
+      });
 
     // Año dinámico
-    document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById("year").textContent = new Date().getFullYear();
 
     // Render inicial
     renderProjects();
