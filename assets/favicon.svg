@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="64" height="64" rx="12" fill="#0B0E14"/>
+  <!-- Sombra de la carpeta -->
+  <rect x="8" y="18" width="48" height="30" rx="6" fill="#020617" opacity="0.75"/>
+  <!-- Parte superior de la carpeta -->
+  <path d="M12 24C12 21.7909 13.7909 20 16 20H26L30 24H48C50.2091 24 52 25.7909 52 28V32H12V24Z"
+        fill="#FACC15"/>
+  <!-- Cuerpo de la carpeta -->
+  <rect x="12" y="28" width="40" height="20" rx="4" fill="#EAB308"/>
+  <!-- Brillo superior -->
+  <rect x="12" y="28" width="40" height="6" rx="3" fill="#FEF08A" opacity="0.75"/>
+</svg>
+
