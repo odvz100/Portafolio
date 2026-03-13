@@ -257,6 +257,28 @@
         .hero h2 {
           font-size: 28px;
         }
+        /* Navbar más ordenado en móviles */
+        .nav {
+          flex-wrap: wrap;
+          row-gap: 8px;
+        }
+        .brand {
+          flex-basis: 100%;
+          justify-content: center;
+        }
+        header nav {
+          flex-basis: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 4px;
+        }
+        header nav a {
+          margin: 0 8px;
+          font-size: 13px;
+        }
+        .controls {
+          margin-left: auto;
+        }
       }
 
       .project {
@@ -480,6 +502,9 @@
       /* Contacto: mayor separación de links respecto al título */
       .contact-links {
         margin-top: 20px;
+        /* Evita que los enlaces se monten entre sí en pantallas pequeñas
+           (los botones tienen padding vertical grande) */
+        line-height: 2;
       }
 
       /* Tema claro */
